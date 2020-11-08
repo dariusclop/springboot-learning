@@ -1,5 +1,6 @@
 package com.lab2.cbse;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,7 +16,8 @@ public class MovieFinderImplem implements MovieFinder {
 
 	@Override
 	public List<Movie> findAll() {
-		return createMovieList();
+		List<Movie> movieList = new ArrayList(createMovieList());
+		return movieList;
 	}
 
 }
