@@ -15,9 +15,10 @@ public class MovieController {
 		ctx = new FileSystemXmlApplicationContext("movie.xml"); 
 	    MovieLister lister = (MovieLister) ctx.getBean("MovieLister");
 	    Movie[] movies = lister.moviesDirectedBy("Darius");
-	    for (int i = 0; i < movies.length; i++) { 
-	    	System.out.println(movies[i].getTitle());
+	    String movieTitles = "";
+	    for (int i = 0; i < movies.length; i++) {
+	    	movieTitles += (i + 1) + "." + movies[i].getTitle() + "\r\n";
 		}
-		return "movies working";
+		return movieTitles;
 	}
 }
